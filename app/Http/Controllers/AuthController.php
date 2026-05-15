@@ -20,7 +20,10 @@ class AuthController extends Controller
         ];
 
         if (Auth::attempt($creadenciales)) {
-            return to_route('home');
+            if (Auth::user()->role === 'administrador') {
+                return to_route('admin.home');
+            }
+            return to_route('veterinario.home');
         } else {
             return to_route('login');
         }
@@ -32,7 +35,11 @@ class AuthController extends Controller
         return to_route('login');
     }
 
-    public function home() {
+    public function veterinario_home() {
         return view('modules/dashboard/home');
+    }
+
+    public function admin_home() {
+        return view('modules/dashboard/admin_home');
     }
 }

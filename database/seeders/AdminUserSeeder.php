@@ -16,7 +16,17 @@ class AdminUserSeeder extends Seeder
             ['email' => 'admin@admin.com'],
             [
                 'name' => 'admin',
-                'password' => \Illuminate\Support\Facades\Hash::make('admin')
+                'password' => \Illuminate\Support\Facades\Hash::make('admin'),
+                'role' => 'administrador'
+            ]
+        );
+
+        \App\Models\User::firstOrCreate(
+            ['email' => 'veterinario@gmail.com'],
+            [
+                'name' => 'Veterinario',
+                'password' => \Illuminate\Support\Facades\Hash::make('veterinario'),
+                'role' => 'veterinario'
             ]
         );
     }

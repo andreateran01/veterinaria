@@ -9,6 +9,7 @@ Route::middleware("guest")->group(function () {
 });
 
 Route::middleware("auth")->group(function () {
-    Route::get('/home',[AuthController::class,'home'])->name('home');
-    Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+    Route::get('/veterinario/home', [AuthController::class, 'veterinario_home'])->name('veterinario.home');
+    Route::get('/admin/home', [AuthController::class, 'admin_home'])->name('admin.home');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
