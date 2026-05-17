@@ -54,7 +54,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Sistema Veterinaria {{ date('Y') }}</span>
+                        <span style="color: #b7b9cc;">&copy; {{ date('Y') }} Sistema de Veterinaria. Todos los derechos reservados.</span>
                     </div>
                 </div>
             </footer>

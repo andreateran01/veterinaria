@@ -6,7 +6,7 @@
     </button>
 
     <div class="d-none d-sm-inline-block ml-3">
-        <span class="text-gray-800 font-weight-bold">Panel de Control General</span>
+        <span class="text-gray-800 font-weight-bold">Sistema de Veterinaria</span>
     </div>
 
     <!-- Topbar Navbar -->
@@ -16,7 +16,7 @@
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name ?? 'Administrador' }} <span class="badge badge-primary ml-1">Admin</span></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ auth()->user()->name ?? 'Administrador' }}</span>
                 <img class="img-profile rounded-circle"
                     src="{{ asset('startbootstrap/img/undraw_profile_3.svg') }}">
             </a>

@@ -20,12 +20,15 @@ class AuthController extends Controller
         ];
 
         if (Auth::attempt($creadenciales)) {
+            $request->session()->regenerate();
             if (Auth::user()->role === 'administrador') {
                 return to_route('admin.home');
             }
             return to_route('veterinario.home');
         } else {
-            return to_route('login');
+            return back()->withErrors([
+                'email' => 'Las credenciales proporcionadas son incorrectas.',
+            ])->onlyInput('email');
         }
     }
 

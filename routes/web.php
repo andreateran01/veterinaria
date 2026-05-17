@@ -11,5 +11,6 @@ Route::middleware("guest")->group(function () {
 Route::middleware("auth")->group(function () {
     Route::get('/veterinario/home', [AuthController::class, 'veterinario_home'])->name('veterinario.home');
     Route::get('/admin/home', [AuthController::class, 'admin_home'])->name('admin.home');
+    Route::get('/admin/usuarios', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin.usuarios.index');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });

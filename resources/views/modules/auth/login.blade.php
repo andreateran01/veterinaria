@@ -20,9 +20,14 @@
                 @method('post')
                 
                 <div class="form-group mb-3">
-                    <input type="email" class="form-control form-control-user bg-light border-0" name="email"
+                    <input type="email" class="form-control form-control-user bg-light border-0 @error('email') is-invalid @enderror" name="email"
                         id="email" aria-describedby="emailHelp"
-                        placeholder="ejemplo@correo.com" required autofocus>
+                        placeholder="ejemplo@correo.com" value="{{ old('email') }}" required autofocus>
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div class="form-group mb-4">
                     <input type="password" class="form-control form-control-user bg-light border-0" name="password"
