@@ -36,7 +36,7 @@
         <div id="collapseUsers" class="collapse" aria-labelledby="headingUsers" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('admin.usuarios.index') }}">Lista de Usuarios</a>
-                <a class="collapse-item" href="#">Registrar Usuario</a>
+                <a class="collapse-item" href="{{ route('admin.usuarios.create') }}">Registrar Usuario</a>
             </div>
         </div>
     </li>
