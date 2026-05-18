@@ -6,10 +6,27 @@
     </button>
 
     <div class="d-none d-sm-inline-block ml-3">
-        <span class="text-gray-600">Sistema de Veterinaria</span>
+        <a href="{{ auth()->check() ? (auth()->user()->role === 'admin' ? route('admin.home') : route('veterinario.home')) : url('/') }}" class="text-gray-600 text-decoration-none font-weight-bold" style="font-size: 1.2rem;">
+            Sistema de Veterinaria
+        </a>
     </div>
 
-    <!-- Topbar Navbar -->
+    <!-- Topbar Navbar (Left) -->
+    <ul class="navbar-nav mr-auto ml-md-4">
+        <!-- Inicio -->
+        <li class="nav-item {{ request()->routeIs('admin.home') || request()->routeIs('veterinario.home') ? 'active' : '' }}">
+            <a class="nav-link text-gray-800" href="{{ auth()->check() ? (auth()->user()->role === 'admin' ? route('admin.home') : route('veterinario.home')) : url('/') }}">
+                <i class="fas fa-home fa-fw mr-1"></i> Inicio
+            </a>
+        </li>
+        <li class="nav-item {{ request()->routeIs('expedientes.index') ? 'active' : '' }}">
+            <a class="nav-link text-gray-800" href="{{ route('expedientes.index') }}">
+                <i class="fas fa-folder-open fa-fw mr-1"></i> Expedientes
+            </a>
+        </li>
+    </ul>
+
+    <!-- Topbar Navbar (Right) -->
     <ul class="navbar-nav ml-auto">
 
         <!-- Nav Item - User Information -->

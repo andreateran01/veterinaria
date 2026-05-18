@@ -1,5 +1,8 @@
 @extends('layouts.main')
 
+{{-- Ocultar el sidebar en esta vista --}}
+@section('hide_sidebar', true)
+
 @section('titulo_pagina', 'Panel de inicio')
 
 @section('contenido')

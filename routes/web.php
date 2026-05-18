@@ -11,6 +11,9 @@ Route::middleware("guest")->group(function () {
 Route::middleware("auth")->group(function () {
     Route::get('/veterinario/home', [AuthController::class, 'veterinario_home'])->name('veterinario.home');
     Route::get('/admin/home', [AuthController::class, 'admin_home'])->name('admin.home');
+    
+    // Rutas de Expedientes
+    Route::view('/expedientes', 'modules.expedientes.index')->name('expedientes.index');
     Route::get('/admin/usuarios', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin.usuarios.index');
     Route::get('/admin/usuarios/crear', [\App\Http\Controllers\Admin\UserController::class, 'create'])->name('admin.usuarios.create');
     Route::post('/admin/usuarios', [\App\Http\Controllers\Admin\UserController::class, 'store'])->name('admin.usuarios.store');
