@@ -14,6 +14,7 @@ Route::middleware("auth")->group(function () {
     
     // Rutas de Expedientes
     Route::view('/expedientes', 'modules.expedientes.index')->name('expedientes.index');
+    Route::get('/expedientes/buscar', [\App\Http\Controllers\ExpedienteController::class, 'search'])->name('expedientes.search');
     Route::get('/admin/usuarios', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin.usuarios.index');
     Route::get('/admin/usuarios/crear', [\App\Http\Controllers\Admin\UserController::class, 'create'])->name('admin.usuarios.create');
     Route::post('/admin/usuarios', [\App\Http\Controllers\Admin\UserController::class, 'store'])->name('admin.usuarios.store');
